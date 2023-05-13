@@ -9,3 +9,6 @@ class Book(models.Model):
     floorUnit = models.CharField(max_length=50)
     organizationPhone = models.CharField(max_length=3)
     directPhone = models.CharField(max_length=8)
+
+    def __str__(self):
+        return f"{self.name} {self.organizationalUnit}"
