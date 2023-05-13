@@ -1,10 +1,13 @@
-from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
+from .models import Book
 
 # Create your views here.
-
-# First Page as index
+# index Page
 def index(request):
+  phoneBooks = Book.objects.all().values()
   template = loader.get_template('index.html')
-  return HttpResponse(template.render())
+  contex = {
+    'PhoneBooks': phoneBooks,
+  }
+  return HttpResponse(template.render(contex,request))

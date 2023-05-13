@@ -1,8 +1,14 @@
 from django.db import models
 
+GENDER_CHOICES = (
+    ('default','همکار ارجمند'),
+    ('sir', 'آقای'),
+    ('madam','خانم'),
+    )
+
 # Create your models here.
+
 class Book(models.Model):
-    GENDER_CHOICES = (('default','همکار ارجمند'),('sir', 'آقای'),('madam','خانم'))
     gender = models.CharField(max_length=15, choices=GENDER_CHOICES, default='default')
     name = models.CharField(max_length=50)
     organizationalUnit = models.CharField(max_length=50)

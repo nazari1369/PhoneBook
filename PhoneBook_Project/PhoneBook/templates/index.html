@@ -1,9 +1,19 @@
-<!DOCTYPE html>
-<html>
-<body>
+{% extends "blog/base.html" %}
+{% block title %}Phone Book{% endblock %}
 
-<h1>Hello World!</h1>
-<p>Welcome to my first Django project!</p>
-
-</body>
-</html>
+{% block content %}
+    <h1>Hello World!</h1>
+    <p>Welcome to my first Django project!</p>
+    <table>
+        {% for x in PhoneBooks %}
+        <tr>
+            <td>{{ x.gender }}</td>
+            <td>{{ x.name }}</td>
+            <td>{{ x.organizationalUnit }}</td>
+            <td>{{ x.floorUnit }}</td>
+            <td>{{ x.organizationPhone }}</td>
+            <td>{{ x.directPhone }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
