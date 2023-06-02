@@ -22,8 +22,16 @@ def endcol():
 
 @register.simple_tag
 def para(extra_classes=""):
-    return format_html('<p class="h1 {}">', extra_classes)
+    return format_html('<p class="{}">', extra_classes)
 
 @register.simple_tag
 def endpara():
     return format_html("</p>")
+
+@register.simple_tag
+def link(href="", extra_classes=""):
+    return format_html('<a href="{}" class="{}">', href, extra_classes)
+
+@register.simple_tag
+def endlink():
+    return format_html("</a>")

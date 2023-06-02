@@ -7,11 +7,10 @@
 
     {% if user.is_authenticated %}
         همکار عزیز، آقا/خانم {{ user.first_name }}!
-        <p><a href="{% url 'logout' %}">Log Out</a></p>
+        {% para %}{% link 'accounts/logout' %}logout{% endlink %}{% endpara %}
     {% else %}
-{#        {% redirect("login") %}#}
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}">Log In</a>
+{#        {% redirect('login") %}#}
+        {% para %}{% link 'accounts/login' %}Log In{% endlink %}{% endpara %}
     {% endif %}
 
     {% row "border-top pt-10" %}
