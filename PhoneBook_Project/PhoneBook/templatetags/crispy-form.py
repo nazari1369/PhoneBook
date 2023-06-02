@@ -16,7 +16,14 @@ def endrow():
 def col(extra_classes=""):
     return format_html('<div class="col {}">', extra_classes)
 
-
 @register.simple_tag
 def endcol():
     return format_html("</div>")
+
+@register.simple_tag
+def para(extra_classes=""):
+    return format_html('<p class="h1 {}">', extra_classes)
+
+@register.simple_tag
+def endpara():
+    return format_html("</p>")

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load crispy-form %}
+
+{% block title %}دفتر تلفن{% endblock %}
+
+{% block content %}
+
+    {% if user.is_authenticated %}
+    Hi {{ user.username }}!
+    <p><a href="{% url 'logout' %}">Log Out</a></p>
+    {% else %}
+    <p>You are not logged in</p>
+    <a href="{% url 'login' %}">Log In</a>
+    {% endif %}
+
+    {% para "display-4" %}Hello World!{% para %}
+    {% para "display-6" %}همکار عزیز، آقا/خانم{% para %}
+    {% row "border-top pt-10" %}
+        {% col "border-top pt-10" %}نام و نام خانوادگی{% endcol %}
+        {% col "border-top pt-10" %}واحد{% endcol %}
+        {% col "border-top pt-10" %}طبقه{% endcol %}
+        {% col "border-top pt-10" %}تلفن سازمان{% endcol %}
+        {% col "border-top pt-10" %}تلفن مستقیم{% endcol %}
+    {% endrow %}
+    {% for x in PhoneBooks %}
+        {% row "border-top pt-10" %}
+            {% col "border-top pt-10" %}{{ x.gender }}&nbsp;{{ x.name }}{% endcol %}
+            {% col "border-top pt-10" %}{{ x.organizationalUnit }}{% endcol %}
+            {% col "border-top pt-10" %}{{ x.floorUnit }}{% endcol %}
+            {% col "border-top pt-10" %}{{ x.organizationPhone }}{% endcol %}
+            {% col "border-top pt-10" %}{{ x.directPhone }}{% endcol %}
+        {% endrow %}
+    {% endfor %}
+{% endblock %}

@@ -1,3 +1,4 @@
+''' load models class'''
 from django.db import models
 
 GENDER_CHOICES = (
@@ -9,6 +10,10 @@ GENDER_CHOICES = (
 # Create your models here.
 
 class Book(models.Model):
+    '''
+    this is list of phone book
+    '''
+
     gender = models.CharField(max_length=15, choices=GENDER_CHOICES, default='default')
     name = models.CharField(max_length=50)
     organizationalUnit = models.CharField(max_length=50)
