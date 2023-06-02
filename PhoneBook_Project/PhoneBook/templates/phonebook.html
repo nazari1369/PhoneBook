@@ -6,15 +6,14 @@
 {% block content %}
 
     {% if user.is_authenticated %}
-    Hi {{ user.username }}!
-    <p><a href="{% url 'logout' %}">Log Out</a></p>
+        همکار عزیز، آقا/خانم {{ user.first_name }}!
+        <p><a href="{% url 'logout' %}">Log Out</a></p>
     {% else %}
-    <p>You are not logged in</p>
-    <a href="{% url 'login' %}">Log In</a>
+{#        {% redirect("login") %}#}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">Log In</a>
     {% endif %}
 
-    {% para "display-4" %}Hello World!{% para %}
-    {% para "display-6" %}همکار عزیز، آقا/خانم{% para %}
     {% row "border-top pt-10" %}
         {% col "border-top pt-10" %}نام و نام خانوادگی{% endcol %}
         {% col "border-top pt-10" %}واحد{% endcol %}
