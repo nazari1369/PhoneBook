@@ -13,23 +13,24 @@
         {% para %}{% link 'accounts/login' %}Log In{% endlink %}{% endpara %}
     {% endif %}
 
-    {% row "border-top pt-10" %}
-        {% col "border-top pt-10" %}نام و نام خانوادگی{% endcol %}
-        {% col "border-top pt-10" %}واحد{% endcol %}
-        {% col "border-top pt-10" %}طبقه{% endcol %}
-        {% col "border-top pt-10" %}تلفن سازمان{% endcol %}
-        {% col "border-top pt-10" %}تلفن مستقیم{% endcol %}
-    {% endrow %}
-    {% for x in PhoneBooks %}
-        {% row "border-top pt-10" %}
-            {% col "border-top pt-10" %}{{ x.gender }}&nbsp;{{ x.name }}{% endcol %}
-            {% col "border-top pt-10" %}{{ x.organizationalUnit }}{% endcol %}
-            {% col "border-top pt-10" %}{{ x.floorUnit }}{% endcol %}
-            {% col "border-top pt-10" %}{{ x.organizationPhone }}{% endcol %}
-            {% col "border-top pt-10" %}{{ x.directPhone }}{% endcol %}
-        {% endrow %}
-    {% endfor %}
+{#    {% row "border-top pt-10" %}#}
+{#        {% col "border-top pt-10" %}نام و نام خانوادگی{% endcol %}#}
+{#        {% col "border-top pt-10" %}واحد{% endcol %}#}
+{#        {% col "border-top pt-10" %}طبقه{% endcol %}#}
+{#        {% col "border-top pt-10" %}تلفن سازمان{% endcol %}#}
+{#        {% col "border-top pt-10" %}تلفن مستقیم{% endcol %}#}
+{#    {% endrow %}#}
+{#    {% for x in PhoneBooks %}#}
+{#        {% row "border-top pt-10" %}#}
+{#            {% col "border-top pt-10" %}{{ x.gender }}&nbsp;{{ x.name }}{% endcol %}#}
+{#            {% col "border-top pt-10" %}{{ x.organizationalUnit }}{% endcol %}#}
+{#            {% col "border-top pt-10" %}{{ x.floorUnit }}{% endcol %}#}
+{#            {% col "border-top pt-10" %}{{ x.organizationPhone }}{% endcol %}#}
+{#            {% col "border-top pt-10" %}{{ x.directPhone }}{% endcol %}#}
+{#        {% endrow %}#}
+{#    {% endfor %}#}
 
+    <div class="justify-content-xl-center">
     {% table "phone_book_table" "table table-striped" %}
         <thead>
             <tr>
@@ -50,7 +51,7 @@
                     {% table_col %} {{ x.organizationPhone }}   {% endtable_col %}
                     {% table_col %} {{ x.directPhone }}         {% endtable_col %}
                     {% table_col %} {{ x.directPhone }}         {% endtable_col %}
-                {% table_row %}
+                {% endtable_row %}
             {% endfor %}
         {% endtbody %}
         <tfoot>
@@ -64,5 +65,5 @@
             </tr>
         </tfoot>
     {% endtable %}
-
+    </div>
 {% endblock %}
