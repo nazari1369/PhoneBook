@@ -32,38 +32,38 @@
 
     <div class="justify-content-xl-center">
     {% table "phone_book_table" "table table-striped" %}
-        <thead>
-            <tr>
-                <th>نام و نام خانوادگی</th>
-                <th>واحد</th>
-                <th>طبقه</th>
-                <th>تلفن سازمان</th>
-                <th>تلفن مستقیم</th>
-                <th>عملیات</th>
-            </tr>
-        </thead>
+        {% table_head %}
+            {% table_row %}
+                {% table_head_col %}نام و نام خانوادگی</th> {% end_table_head_col %}
+                {% table_head_col %}واحد</th>               {% end_table_head_col %}
+                {% table_head_col %}طبقه</th>               {% end_table_head_col %}
+                {% table_head_col %}تلفن سازمان</th>        {% end_table_head_col %}
+                {% table_head_col %}تلفن مستقیم</th>        {% end_table_head_col %}
+                {% table_head_col %}عملیات</th>             {% end_table_head_col %}
+            {% end_table_row %}
+        {% end_table_head %}
         {% tbody %}
             {% for x in PhoneBooks %}
                 {% table_row %}
-                    {% table_col %} {{ x.gender }}&nbsp;{{ x.name }} {% endtable_col %}
-                    {% table_col %} {{ x.organizationalUnit }}  {% endtable_col %}
-                    {% table_col %} {{ x.floorUnit }}           {% endtable_col %}
-                    {% table_col %} {{ x.organizationPhone }}   {% endtable_col %}
-                    {% table_col %} {{ x.directPhone }}         {% endtable_col %}
-                    {% table_col %} {{ x.directPhone }}         {% endtable_col %}
-                {% endtable_row %}
+                    {% table_col %} {{ x.gender }}&nbsp;{{ x.name }} {% end_table_col %}
+                    {% table_col %} {{ x.organizationalUnit }}  {% end_table_col %}
+                    {% table_col %} {{ x.floorUnit }}           {% end_table_col %}
+                    {% table_col %} {{ x.organizationPhone }}   {% end_table_col %}
+                    {% table_col %} {{ x.directPhone }}         {% end_table_col %}
+                    {% table_col %} {{ x.directPhone }}         {% end_table_col %}
+                {% end_table_row %}
             {% endfor %}
         {% endtbody %}
-        <tfoot>
-            <tr>
-                <th>نام و نام خانوادگی</th>
-                <th>واحد</th>
-                <th>طبقه</th>
-                <th>تلفن سازمان</th>
-                <th>تلفن مستقیم</th>
-                <th>عملیات</th>
-            </tr>
-        </tfoot>
-    {% endtable %}
+        {% table_footer %}
+            {% table_row %}
+                {% table_head_col %}نام و نام خانوادگی</th> {% end_table_head_col %}
+                {% table_head_col %}واحد</th>               {% end_table_head_col %}
+                {% table_head_col %}طبقه</th>               {% end_table_head_col %}
+                {% table_head_col %}تلفن سازمان</th>        {% end_table_head_col %}
+                {% table_head_col %}تلفن مستقیم</th>        {% end_table_head_col %}
+                {% table_head_col %}عملیات</th>             {% end_table_head_col %}
+            {% end_table_row %}
+        {% end_table_footer %}
+    {% end_table %}
     </div>
 {% endblock %}

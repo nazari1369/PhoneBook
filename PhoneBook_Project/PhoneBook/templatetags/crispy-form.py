@@ -41,7 +41,7 @@ def table(default_id, extra_classes=""):
     return format_html('<table id="{}" class="{}" style="90%;">', default_id, extra_classes)
 
 @register.simple_tag
-def endtable():
+def end_table():
     return format_html("</table>")
 
 @register.simple_tag
@@ -57,7 +57,7 @@ def table_row(extra_classes=""):
     return format_html('<tr class="{}">', extra_classes)
 
 @register.simple_tag
-def endtable_row():
+def end_table_row():
     return format_html("</tr>")
 
 @register.simple_tag
@@ -65,5 +65,29 @@ def table_col(extra_classes=""):
     return format_html('<td class="{}">', extra_classes)
 
 @register.simple_tag
-def endtable_col():
+def end_table_col():
     return format_html("</td>")
+
+@register.simple_tag
+def table_head_col(extra_classes=""):
+    return format_html('<th class="{}">', extra_classes)
+
+@register.simple_tag
+def end_table_head_col():
+    return format_html("</th>")
+
+@register.simple_tag
+def table_head(extra_classes=""):
+    return format_html('<thead class="{}">', extra_classes)
+
+@register.simple_tag
+def end_table_head():
+    return format_html("</thead>")
+
+@register.simple_tag
+def table_footer(extra_classes=""):
+    return format_html('<tfoot class="{}">', extra_classes)
+
+@register.simple_tag
+def end_table_footer():
+    return format_html("</tfoot>")
